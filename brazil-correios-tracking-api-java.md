@@ -1,12 +1,12 @@
-Australia Post Tracking API - Java
+Correios Tracking API - Java
 ================================
-Use Java to track Australia Post shipments with Australia Post Tracking API.
+Use Java to track Correios shipments with Correios Tracking API.
 
 Features
 --------
-- Real-time Australia Post tracking.
-- Batch Australia Post tracking.
-- Other features to manage your Australia Post tracking.
+- Real-time Correios tracking.
+- Batch Correios tracking.
+- Other features to manage your Correios tracking.
 
 Installation
 ------------
@@ -39,14 +39,14 @@ To use this API, you need to generate your API key.
 - Give a name to your API key, and click "Save" .
 
 
-Then, start to track your Australia Post shipments.
+Then, start to track your Correios shipments.
 
 Usage
 ----------
 
 Create a tracking (Real-time tracking):
 
-    package com.trackingmore.example.australiapost;
+    package com.trackingmore.example.brazilcorreios;
     
     import com.trackingmore.TrackingMore;
     import com.trackingmore.exception.TrackingMoreException;
@@ -55,7 +55,7 @@ Create a tracking (Real-time tracking):
     import java.io.IOException;
     import java.util.List;
     
-    public class CreateAustraliaPostTrackingExample {
+    public class CreateCorreiosTrackingExample {
     
         public static void main(String[] args) {
             try {
@@ -64,7 +64,7 @@ Create a tracking (Real-time tracking):
                 
                 CreateTrackingParams createTrackingParams = new CreateTrackingParams();
                 createTrackingParams.setTrackingNumber("0301006785462006320995");
-                createTrackingParams.setCourierCode("australia-post");
+                createTrackingParams.setCourierCode("brazil-correios");
                 TrackingMoreResponse<Tracking> result = trackingMore.trackings.CreateTracking(createTrackingParams);
                 System.out.println(result.getMeta().getCode());
                 if(result.getData() != null){
@@ -84,7 +84,7 @@ Create a tracking (Real-time tracking):
 
 Create trackings (Max. 40 tracking numbers create in one call):
 
-    package com.trackingmore.example.australiapost;
+    package com.trackingmore.example.brazilcorreios;
     
     import com.trackingmore.TrackingMore;
     import com.trackingmore.exception.TrackingMoreException;
@@ -93,7 +93,7 @@ Create trackings (Max. 40 tracking numbers create in one call):
     import java.io.IOException;
     import java.util.List;
     
-    public class CreateAustraliaPostTrackingsExample {
+    public class CreateCorreiosTrackingsExample {
     
         public static void main(String[] args) {
             try {
@@ -104,11 +104,11 @@ Create trackings (Max. 40 tracking numbers create in one call):
                 
                 CreateTrackingParams createTrackingParams1 = new CreateTrackingParams();
                 createTrackingParams1.setTrackingNumber("LK201223662AU");
-                createTrackingParams1.setCourierCode("australia-post");
+                createTrackingParams1.setCourierCode("brazil-correios");
                 
                 CreateTrackingParams createTrackingParams2 = new CreateTrackingParams();
                 createTrackingParams2.setTrackingNumber("LH290032509AU");
-                createTrackingParams2.setCourierCode("australia-post");
+                createTrackingParams2.setCourierCode("brazil-correios");
                 
                 paramsList.add(createTrackingParams1);
                 paramsList.add(createTrackingParams2);
@@ -142,7 +142,7 @@ Create trackings (Max. 40 tracking numbers create in one call):
 
 Get status of the shipment:
 
-    package com.trackingmore.example.australiapost;
+    package com.trackingmore.example.brazilcorreios;
     
     import com.trackingmore.TrackingMore;
     import com.trackingmore.exception.TrackingMoreException;
@@ -151,7 +151,7 @@ Get status of the shipment:
     import java.io.IOException;
     import java.util.List;
     
-    public class GetAustraliaPostTrackingExample {
+    public class GetCorreiosTrackingExample {
     
         public static void main(String[] args) {
             try {
@@ -161,7 +161,7 @@ Get status of the shipment:
                 GetTrackingResultsParams trackingParams = new GetTrackingResultsParams();
                 # Perform queries based on various conditions
                 # trackingParams.setTrackingNumbers("LH290032509AU,LK201223662AU");
-                trackingParams.setCourierCode("australia-post");
+                trackingParams.setCourierCode("brazil-correios");
                 trackingParams.setCreatedDateMin("2023-08-23T06:00:00+00:00");
                 trackingParams.setCreatedDateMax("2023-09-05T07:20:42+00:00");
                 TrackingMoreResponse<List<Tracking>> result = trackingMore.trackings.GetTrackingResults(trackingParams);
@@ -185,7 +185,7 @@ Get status of the shipment:
 
 Update a tracking by ID:
 
-    package com.trackingmore.example.australiapost;
+    package com.trackingmore.example.brazilcorreios;
     
     import com.trackingmore.TrackingMore;
     import com.trackingmore.exception.TrackingMoreException;
@@ -194,7 +194,7 @@ Update a tracking by ID:
     import java.io.IOException;
     import java.util.List;
     
-    public class UpdateAustraliaPostTrackingExample {
+    public class UpdateCorreiosTrackingExample {
     
         public static void main(String[] args) {
             try {
