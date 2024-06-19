@@ -1,12 +1,12 @@
-Australia Post Tracking API - Node.js
+Correios Tracking API - Node.js
 ================================
-Use Node.js to track Australia Post shipments with Australia Post Tracking API.
+Use Node.js to track Correios shipments with Correios Tracking API.
 
 Features
 --------
-- Real-time Australia Post tracking.
-- Batch Australia Post tracking.
-- Other features to manage your Australia Post tracking.
+- Real-time Correios tracking.
+- Batch Correios tracking.
+- Other features to manage your Correios tracking.
 
 Installation
 ------------
@@ -31,7 +31,7 @@ To use this API, you need to generate your API key.
 - Give a name to your API key, and click "Save" .
 
 
-Then, start to track your Australia Post shipments.
+Then, start to track your Correios shipments.
 
 Usage
 ----------
@@ -43,7 +43,7 @@ Create a tracking (Real-time tracking):
       TrackingMore.api_key = 'your api key'
       
       begin
-        params  = {"tracking_number" => "0301006785462006320995","courier_code"=>"australia-post"}
+        params  = {"tracking_number" => "0301006785462006320995","courier_code"=>"brazil-correios"}
         response = TrackingMore::Tracking.create_tracking(params)
         puts response
       rescue TrackingMore::TrackingMoreException => e
@@ -60,7 +60,7 @@ Create trackings (Max. 40 tracking numbers create in one call):
     TrackingMore.api_key = 'your api key'
     
     begin
-      params  = [{"tracking_number" => "LK201223662AU","courier_code"=>"australia-post"},{"tracking_number" => "LH290032509AU","courier_code"=>"australia-post"}]
+      params  = [{"tracking_number" => "LK201223662AU","courier_code"=>"brazil-correios"},{"tracking_number" => "LH290032509AU","courier_code"=>"brazil-correios"}]
       response = TrackingMore::Tracking.batch_create_trackings(params)
       puts response
     rescue TrackingMore::TrackingMoreException => e
@@ -79,8 +79,8 @@ Get status of the shipment:
     
     begin
       # Perform queries based on various conditions
-      # params  = {"courier_code"=>"australia-post"}
-      # params  = {"tracking_numbers" => "LK201223662AU,LH290032509AU","courier_code"=>"australia-post"}
+      # params  = {"courier_code"=>"brazil-correios"}
+      # params  = {"tracking_numbers" => "LK201223662AU,LH290032509AU","courier_code"=>"brazil-correios"}
       params  = {"created_date_min" => "2023-08-23T14:00:00+08:00","created_date_max"=>"2023-08-23T15:04:00+08:00"}
       response = TrackingMore::Tracking.get_tracking_results(params)
       puts response
