@@ -1,12 +1,12 @@
-Australia Post Tracking API - .Net
+Correios Tracking API - .Net
 ================================
-Use .Net to track Australia Post shipments with Australia Post Tracking API.
+Use .Net to track Correios shipments with Correios Tracking API.
 
 Features
 --------
-- Real-time Australia Post tracking.
-- Batch Australia Post tracking.
-- Other features to manage your Australia Post tracking.
+- Real-time Correios tracking.
+- Batch Correios tracking.
+- Other features to manage your Correios tracking.
 
 Installation
 ------------
@@ -41,7 +41,7 @@ To use this API, you need to generate your API key.
 - Give a name to your API key, and click "Save" .
 
 
-Then, start to track your Australia Post shipments.
+Then, start to track your Correios shipments.
 
 Usage
 ----------
@@ -65,7 +65,7 @@ Create a tracking (Real-time tracking):
       
                   CreateTrackingParams createTrackingParams = new CreateTrackingParams();
                   createTrackingParams.trackingNumber = "0301006785462006320995";
-                  createTrackingParams.courierCode = "australia-post";
+                  createTrackingParams.courierCode = "brazil-correios";
                   var apiResponse = trackingMore.Tracking.CreateTracking(createTrackingParams);
                   Console.WriteLine(apiResponse.meta.code);
                   Console.WriteLine(apiResponse.data.trackingNumber);
@@ -108,7 +108,7 @@ Create trackings (Max. 40 tracking numbers create in one call):
                   CreateTrackingParams trackingParams1 = new CreateTrackingParams
                   {
                       trackingNumber = "LK201223662AU",
-                      courierCode = "australia-post"
+                      courierCode = "brazil-correios"
                   };
                   
                   trackingParamsList.Add(trackingParams1);
@@ -116,7 +116,7 @@ Create trackings (Max. 40 tracking numbers create in one call):
                   CreateTrackingParams trackingParams2 = new CreateTrackingParams
                   {
                       trackingNumber = "LH290032509AU",
-                      courierCode = "australia-post"
+                      courierCode = "brazil-correios"
                   };
                   
                   trackingParamsList.Add(trackingParams2);
@@ -174,7 +174,7 @@ Get status of the shipment:
 
                   # Perform queries based on various conditions
                   # getTrackingResultsParams.trackingNumbers = "LH290032509AU,LK201223662AU";
-                  getTrackingResultsParams.courierCode = "australia-post";
+                  getTrackingResultsParams.courierCode = "brazil-correios";
                   getTrackingResultsParams.createdDateMin = "2023-08-23T06:00:00+00:00";
                   getTrackingResultsParams.createdDateMax = "2023-09-05T07:20:42+00:00";
                   var apiResponse = trackingMore.Tracking.GetTrackingResults(getTrackingResultsParams);
